@@ -65,24 +65,26 @@ class Calculadora:
         for i in range(4):
             self.main_frame.grid_columnconfigure(i, weight=1)
 
+        # Vincular el evento de cambio de tamaño
+        self.root.bind("<Configure>", self.ajustar_fuente)
+
     def configurar_tema_oscuro(self):
-        self.root.configure(bg='#1a1a1a'),
+        self.root.configure(bg='#1a1a1a')
         self.estilo.configure('TFrame', background='#1a1a1a')
-        self.estilo.configure('TButton', font=('Arial', 14))
-        self.estilo.configure('Calc.TButton', background='#141414', foreground='#000000')  # Texto negro
-        self.estilo.configure('Op.TButton', background='#141414', foreground='#000000')    # Texto negro
-        self.estilo.configure('Mode.TButton', background='#141414', foreground='#000000')  # Texto negro
-        self.estilo.configure('TEntry', fieldbackground='#333333', foreground='white')
-       
+        self.estilo.configure('TButton', font=('Arial Black', 14, 'bold'))
+        self.estilo.configure('Calc.TButton', background='#141414', foreground='#FF69B4')
+        self.estilo.configure('Op.TButton', background='#141414', foreground='#00BFFF', font=('Arial', 14))
+        self.estilo.configure('Mode.TButton', background='#141414', foreground='#32CD32', font=('Arial', 14))
+        self.estilo.configure('TEntry', fieldbackground='#333333', foreground='#FF69B4')
 
     def configurar_tema_claro(self):
-        self.root.configure(bg='#f0f0f0')
-        self.estilo.configure('TFrame', background='#f0f0f0')
-        self.estilo.configure('TButton', font=('Arial', 14))
-        self.estilo.configure('Calc.TButton', background='#e0e0e0', foreground='#000000')  # Fondo gris claro
-        self.estilo.configure('Op.TButton', background='#d0d0d0', foreground='#000000')    # Fondo más claro
-        self.estilo.configure('Mode.TButton', background='#c0c0c0', foreground='#000000')  # Fondo gris medio
-        self.estilo.configure('TEntry', fieldbackground='white', foreground='black')
+        self.root.configure(bg='#FFFFFF')
+        self.estilo.configure('TFrame', background='#FFFFFF')
+        self.estilo.configure('TButton', font=('Arial Black', 14, 'bold'))
+        self.estilo.configure('Calc.TButton', background='#F0F8FF', foreground='#FF1493')
+        self.estilo.configure('Op.TButton', background='#F0F8FF', foreground='#1E90FF', font=('Arial', 14))
+        self.estilo.configure('Mode.TButton', background='#F0F8FF', foreground='#228B22', font=('Arial', 14))
+        self.estilo.configure('TEntry', fieldbackground='white', foreground='#FF1493')
 
     def click_boton(self, valor):
         if valor == '=':
@@ -103,6 +105,18 @@ class Calculadora:
         else:
             self.configurar_tema_oscuro()
             self.modo_actual.set("Oscuro")
+
+    def ajustar_fuente(self, event):
+        # Ajustar tamaño de fuente basado en el tamaño de la ventana
+        width = self.root.winfo_width()
+        height = self.root.winfo_height()
+        size = min(width // 20, height // 25)  # Aumentado el tamaño relativo
+        for widget in self.main_frame.winfo_children():
+            if isinstance(widget, tk.Button):
+                if widget['text'] in '0123456789.':
+                    widget.configure(font=("Arial Black", size, "bold"))  # Números más gordos
+                else:
+                    widget.configure(font=("Arial", size))  # Operadores normales
 
     def iniciar(self):
         self.root.mainloop()
