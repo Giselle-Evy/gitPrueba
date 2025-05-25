@@ -69,18 +69,18 @@ class Calculadora:
         self.root.configure(bg='#1a1a1a')
         self.estilo.configure('TFrame', background='#1a1a1a')
         self.estilo.configure('TButton', font=('Arial', 14))
-        self.estilo.configure('Calc.TButton', background='#333333', foreground='white')
-        self.estilo.configure('Op.TButton', background='#ff9500', foreground='white')
-        self.estilo.configure('Mode.TButton', background='#666666', foreground='white')
+        self.estilo.configure('Calc.TButton', background='#141414', foreground='#000000')  # Texto negro
+        self.estilo.configure('Op.TButton', background='#141414', foreground='#000000')    # Texto negro
+        self.estilo.configure('Mode.TButton', background='#141414', foreground='#000000')  # Texto negro
         self.estilo.configure('TEntry', fieldbackground='#333333', foreground='white')
 
     def configurar_tema_claro(self):
         self.root.configure(bg='#f0f0f0')
         self.estilo.configure('TFrame', background='#f0f0f0')
         self.estilo.configure('TButton', font=('Arial', 14))
-        self.estilo.configure('Calc.TButton', background='#ffffff', foreground='black')
-        self.estilo.configure('Op.TButton', background='#ff9500', foreground='white')
-        self.estilo.configure('Mode.TButton', background='#cccccc', foreground='black')
+        self.estilo.configure('Calc.TButton', background='#e0e0e0', foreground='#000000')  # Fondo gris claro
+        self.estilo.configure('Op.TButton', background='#d0d0d0', foreground='#000000')    # Fondo más claro
+        self.estilo.configure('Mode.TButton', background='#c0c0c0', foreground='#000000')  # Fondo gris medio
         self.estilo.configure('TEntry', fieldbackground='white', foreground='black')
 
     def click_boton(self, valor):
