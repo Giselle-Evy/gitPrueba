@@ -66,13 +66,14 @@ class Calculadora:
             self.main_frame.grid_columnconfigure(i, weight=1)
 
     def configurar_tema_oscuro(self):
-        self.root.configure(bg='#1a1a1a')
+        self.root.configure(bg='#1a1a1a'),
         self.estilo.configure('TFrame', background='#1a1a1a')
         self.estilo.configure('TButton', font=('Arial', 14))
         self.estilo.configure('Calc.TButton', background='#141414', foreground='#000000')  # Texto negro
         self.estilo.configure('Op.TButton', background='#141414', foreground='#000000')    # Texto negro
         self.estilo.configure('Mode.TButton', background='#141414', foreground='#000000')  # Texto negro
         self.estilo.configure('TEntry', fieldbackground='#333333', foreground='white')
+       
 
     def configurar_tema_claro(self):
         self.root.configure(bg='#f0f0f0')
