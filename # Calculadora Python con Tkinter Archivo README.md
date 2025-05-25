@@ -1,6 +1,6 @@
 # Calculadora Python con Tkinter
 
-Una calculadora simple con interfaz gráfica desarrollada en Python usando Tkinter, que incluye modo oscuro y claro.
+Una calculadora moderna y versátil con interfaz gráfica desarrollada en Python usando Tkinter, que incluye modo oscuro y claro, además de funciones científicas básicas.
 
 ## Características
 
@@ -11,9 +11,19 @@ Una calculadora simple con interfaz gráfica desarrollada en Python usando Tkint
   - Resta (-)
   - Multiplicación (*)
   - División (/)
-- Botón de limpieza (C)
+- Operaciones avanzadas:
+  - Potencia (^)
+  - Raíz cuadrada (√)
+  - Porcentaje (%)
+  - Cambio de signo (+/-)
+- Funcionalidades adicionales:
+  - Botón de limpieza (C)
+  - Borrar último dígito (⌫)
+  - Memoria (M+, M-, MR, MC)
 - Soporte para números decimales
 - Diseño adaptable a diferentes tamaños de ventana
+- Accesos rápidos de teclado
+- Historial de operaciones
 
 ## Requisitos
 
@@ -44,12 +54,24 @@ python calculadora.py
 3. Presiona '=' para obtener el resultado
 4. Presiona 'C' para limpiar la pantalla
 5. Usa el botón 'Cambiar Modo' para alternar entre tema oscuro y claro
+6. Accesos rápidos de teclado:
+   - Enter: Calcular resultado
+   - Escape: Limpiar pantalla
+   - Backspace: Borrar último dígito
+   - M: Acceder a funciones de memoria
 
 ## Personalización
 
 Puedes modificar los colores de la interfaz editando los valores hexadecimales en las funciones:
 - `configurar_tema_oscuro()`
 - `configurar_tema_claro()`
+
+## Notas técnicas
+
+- Desarrollado con Python 3.10+
+- Implementación de patrón MVC
+- Manejo de errores robusto
+- Código documentado siguiendo PEP 257
 
 ## Contribuciones
 
